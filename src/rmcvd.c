@@ -7,7 +7,7 @@
  */
 
 #include <stdio.h>
-#include "x.h"
+#include "pterm.h"
 
 int rmcvd (pts, npts)
 PTERM *pts[];

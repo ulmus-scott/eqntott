@@ -12,6 +12,7 @@ eqntott_SOURCES= \
  prexpr.c\
  procargs.c\
  pterm.c\
+ pterm.h\
  pterm_ops.c\
  pterm_ops.h\
  putpla.c\

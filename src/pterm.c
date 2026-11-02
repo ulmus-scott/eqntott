@@ -25,6 +25,7 @@
  *	puts pterm back on the free list and returns pterm's next value
  *	which is appropriated for the free list.
  */
+#include "pterm.h"
 
 #include <stdio.h>
 #include "x.h"
@@ -32,8 +33,7 @@
 static PTERM *freePtr = 0;
 extern int ninputs, noutputs;
 
-static
-get_free ()
+static void get_free(void)
 {
 	register PTERM *pterms;
 	register int i;
@@ -64,9 +64,7 @@ get_free ()
 	return;
 }
 
-PTERM *
-copy_pterm (pterm)
-PTERM *pterm;
+PTERM* copy_pterm(PTERM *pterm)
 {
 	register BIT *b, *c;
 	register int i;
@@ -87,9 +85,7 @@ PTERM *pterm;
 	return (copy);
 }
 
-PTERM *
-new_pterm (next)
-PTERM *next;
+PTERM* new_pterm(PTERM *next)
 {
 	register PTERM *pterm;
 	register BIT *b;
@@ -107,9 +103,7 @@ PTERM *next;
 	return (pterm);
 }
 
-PTERM *
-free_pterm (pterm)
-PTERM *pterm;
+PTERM* free_pterm(PTERM *pterm)
 {
 	PTERM *next;
 /* added 12/10/84 by Richard Rudell per R. Newton's suggestion */

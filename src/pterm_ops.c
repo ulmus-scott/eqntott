@@ -30,6 +30,7 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "pterm.h"
 extern int ninputs, noutputs;
 
 int cmppt(const void *a_, const void *b_)

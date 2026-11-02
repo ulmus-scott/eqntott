@@ -7,7 +7,7 @@
  */
 
 #include <stdio.h>
-#include "x.h"
+#include "pterm.h"
 
 extern int ninputs;
 

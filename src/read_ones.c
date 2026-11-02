@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "pterm.h"
 #include "pterm_ops.h"
 extern int ninputs;
 extern struct Nt nts[], *outorder[];

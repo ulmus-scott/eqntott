@@ -1,7 +1,7 @@
 #ifndef PTERM_OPS_H
 #define PTERM_OPS_H
 
-#include "x.h"
+#include "pterm.h"
 
 int cmppt (const void *a_, const void *b_);
 int cmpv (BIT *x, BIT *y, int n);

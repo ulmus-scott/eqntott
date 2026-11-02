@@ -8,6 +8,7 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "pterm.h"
 
 extern int ninputs, noutputs, nerrors;
 extern int f_flag, s_flag, need_parse, need_grind;

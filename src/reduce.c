@@ -7,7 +7,7 @@
  */
 
 #include <stdio.h>
-#include "x.h"
+#include "pterm.h"
 
 extern int r_flag, R_flag;
 
