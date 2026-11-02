@@ -150,7 +150,32 @@ sysconfdir = @sysconfdir@
 target_alias = @target_alias@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-eqntott_SOURCES = bnode.c canon.c cover.c duple.c hash.c merge.c misc.c nt.c preprocess.c prexpr.c procargs.c pterm.c pterm_ops.c pterm_ops.h putpla.c read_ones.c reduce.c rmcvd.c substitute.c version.c x.c x.h yystuff.c y.tab.h y.tab.c
+eqntott_SOURCES = \
+ bnode.c\
+ canon.c\
+ cover.c\
+ duple.c\
+ hash.c\
+ merge.c\
+ misc.c\
+ nt.c\
+ preprocess.c\
+ prexpr.c\
+ procargs.c\
+ pterm.c\
+ pterm_ops.c\
+ pterm_ops.h\
+ putpla.c\
+ read_ones.c\
+ reduce.c\
+ rmcvd.c\
+ substitute.c\
+ version.c\
+ x.c\
+ x.h\
+ yystuff.c\
+ y.tab.h\
+ y.tab.c
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 
