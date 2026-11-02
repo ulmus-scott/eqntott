@@ -1,0 +1,6 @@
+Makefile
+config.*
+src/.deps
+src/stamp-h1
+*.o
+eqntott
