@@ -15,7 +15,7 @@
 extern int ninputs, noutputs;
 extern char *ego;
 
-#include "hdr.h"
+#include "pterm_ops.h"
 
 find_index (pts, npts, x, start, finish)
 PTERM *pts[];

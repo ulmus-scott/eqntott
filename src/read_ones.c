@@ -15,7 +15,7 @@
 
 #include <stdio.h>
 #include "x.h"
-#include "hdr.h"
+#include "pterm_ops.h"
 extern int ninputs;
 extern struct Nt nts[], *outorder[];
 extern char *ego;

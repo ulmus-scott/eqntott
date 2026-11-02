@@ -5,7 +5,7 @@
  *	All rights reserved
  *
  */
-#include "hdr.h"
+#include "pterm_ops.h"
 	
 /*
  * This file contains the functions:
@@ -171,8 +171,7 @@ PTERM *find_pterm (PTERM *pt, PTERM *pts[], int npts)
 	return (NIL_PTERM);
 }
 
-orpt (pt1, pt2)
-PTERM *pt1, *pt2;
+void orpt (PTERM *pt1, PTERM *pt2)
 /*
  * My job is to output BIT-wise "or" the ptor arrays of PTERMS
  * "pt1" and "pt2" and leave the result in the ptor array

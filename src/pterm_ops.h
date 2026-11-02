@@ -1,5 +1,5 @@
-#ifndef __HDR_H
-#define __HDR_H
+#ifndef PTERM_OPS_H
+#define PTERM_OPS_H
 
 #include "x.h"
 

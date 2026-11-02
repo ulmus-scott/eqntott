@@ -24,7 +24,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "x.h"
-#include "hdr.h"
+#include "pterm_ops.h"
 #define CHUNK 1024
 static BNODE *freePtr = 0;
 
