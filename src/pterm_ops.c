@@ -119,9 +119,6 @@ PTERM *a[], *b[];
 	*/
 }
 
-/*PTERM *find_pterm(pts, npts, pt)
-PTERM *pts[], *pt;
-int npts;*/
 PTERM *find_pterm (PTERM *pt, PTERM *pts[], int npts)
 /*
  * My job is to return a pointer to the first PTERM in "pts" whose 

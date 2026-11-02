@@ -7,6 +7,7 @@
  */
 
 #include "x.h"
+#include "pterm_ops.h"
 #include <stdio.h>
 
 extern int ninputs, noutputs;
@@ -20,7 +21,7 @@ int npts;
  */
  {
 	PTERM *extant();
-	int i, cmppth();
+	int i;
 
 	qsort (pts, npts, sizeof (PTERM *), cmppth);
 	for (i = 0; i < npts; i++) {
@@ -51,7 +52,7 @@ int npts;
  * a simple linear search of the whole and-plane).
  */
 {
-	PTERM *tmp, *find_pterm();
+	PTERM *tmp;
 	BIT b;
 	int i;
 
@@ -64,7 +65,7 @@ int npts;
 		if (b == 2)
 			continue;
 		pt->ptand[i] = 2;
-		tmp = find_pterm (pts, npts, pt);
+		tmp = find_pterm (pt, pts, npts);
 		if (tmp && !tmp->cv && 
 		    -1 == cmpv (tmp->ptor, pt->ptor, noutputs)) {
 			pt->ptand[i] = b;
