@@ -32,12 +32,13 @@
 #include "x.h"
 extern int ninputs, noutputs;
 
-int cmppt (a, b)
-PTERM *a[], *b[];
+int cmppt(const void *a_, const void *b_)
 /*
  * compare product terms indirectly pointed to by a and b.
  */
 {
+	const PTERM** a = (const PTERM**)a_;
+	const PTERM** b = (const PTERM**)b_;
 	register int i, aa, bb;
 
 	for (i = 0; i < ninputs; i++) {
@@ -80,13 +81,13 @@ int n;
 	return (j);
 }
 
-int 
-cmpptx (a, b)
-PTERM *a[], *b[];
+int cmpptx(const void *a_, const void *b_)
 /*
  * compare index of product terms indirectly pointed to by a and b.
  */
 {
+	const PTERM** a = (const PTERM**)a_;
+	const PTERM** b = (const PTERM**)b_;
 	if (a[0]->index == b[0]->index)
 		return (0);
 	else	if (a[0]->index < b[0]->index)
@@ -94,13 +95,13 @@ PTERM *a[], *b[];
 		else	return (1);
 }
 
-int 
-cmppth (a, b)
-PTERM *a[], *b[];
+int cmppth(const void *a_, const void *b_)
 /*
  * compare andhash of product terms indirectly pointed to by a and b.
  */
 {
+	const PTERM** a = (const PTERM**)a_;
+	const PTERM** b = (const PTERM**)b_;
 	register BIT *p, *q;
 	register int i;
 

@@ -3,10 +3,10 @@
 
 #include "x.h"
 
-int cmppt (PTERM **a, PTERM **b);
+int cmppt (const void *a_, const void *b_);
 int cmpv (BIT *x, BIT *y, int n);
-int cmpptx (PTERM **a, PTERM **b);
-int cmppth (PTERM **a, PTERM **b);
+int cmpptx (const void *a_, const void *b_);
+int cmppth (const void *a_, const void *b_);
 PTERM *find_pterm (PTERM *pt, PTERM *pts[], int npts);
 long pthash (BIT *inv, int n);
 int ptindex (BIT *inv, int n);
