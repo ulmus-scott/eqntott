@@ -49,7 +49,6 @@ static void prnode(int num, int kind)
 
 void prexpr(BNODE *exp)
 {
-	extern struct Nt nts[];
 	extern struct Nt *inorder[];
 
 	switch (exp->value) {
@@ -96,7 +95,6 @@ void prexpr(BNODE *exp)
 
 void prlexpr(BNODE *exp)
 {
-	extern struct Nt nts[];
 	extern struct Nt *inorder[];
 
 	switch (exp->value) {
@@ -144,7 +142,6 @@ void prlexpr(BNODE *exp)
 
 void prgexpr(BNODE *exp, int node, int kind)
 {
-	extern struct Nt nts[];
 	extern struct Nt *inorder[], *outorder[];
 
 	int lnum, rnum, atom_left, atom_right;
