@@ -11,6 +11,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include "x.h"
 
 struct Nt nts[NTSIZE];
@@ -57,7 +58,7 @@ char *name;
 		yyerror ("name table full");
 		return ((struct Nt *) 0);
 	}
-	if (!(slot->name = store (name))) {
+	if (!(slot->name = strdup(name))) {
 		yyerror ("can't store name");
 		return ((struct Nt *) 0);
 	}

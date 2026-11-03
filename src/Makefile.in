@@ -45,7 +45,7 @@ am__installdirs = "$(DESTDIR)$(bindir)"
 binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
 PROGRAMS = $(bin_PROGRAMS)
 am_eqntott_OBJECTS = bnode.$(OBJEXT) canon.$(OBJEXT) cover.$(OBJEXT) \
-	duple.$(OBJEXT) hash.$(OBJEXT) merge.$(OBJEXT) misc.$(OBJEXT) \
+	duple.$(OBJEXT) hash.$(OBJEXT) merge.$(OBJEXT) \
 	nt.$(OBJEXT) preprocess.$(OBJEXT) prexpr.$(OBJEXT) \
 	procargs.$(OBJEXT) pterm.$(OBJEXT) pterm_ops.$(OBJEXT) \
 	putpla.$(OBJEXT) read_ones.$(OBJEXT) reduce.$(OBJEXT) \
@@ -157,7 +157,6 @@ eqntott_SOURCES = \
  duple.c\
  hash.c\
  merge.c\
- misc.c\
  nt.c\
  preprocess.c\
  prexpr.c\
@@ -267,7 +266,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/duple.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/merge.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/misc.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nt.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/preprocess.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/prexpr.Po@am__quote@
