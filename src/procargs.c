@@ -45,7 +45,7 @@ static void copyprefix(char *sout, char *sin) {
 
 int procargs(int argc, char *argv[])
 {
-	register arg;
+	register int arg;
 	char *s;
 
 	ego = argv[0];
