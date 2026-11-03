@@ -109,16 +109,22 @@ void yyerror(char *yyerrmsg)
 			break;
 		}
 
-	if (yylen >= 72)
+	if (yylen >= 72) {
 		/*
 		 * line longer than terminal width if tabs handled properly
 		 * (8 bytes are reserved for header/trailer)
 		 */
-		if (yyr - yyp >= 71)
+		if (yyr - yyp >= 71) {
 			/* line is really long */
-			if (yyr - yycharno < yycharno - yyp)
+			if (yyr - yycharno < yycharno - yyp) {
 				yylead++, yyp = yyr - 71;
-			else	yytrail++, yyr = yyp + 71;
+			}
+			else {
+				yytrail++, yyr = yyp + 71;
+			}
+		}
+
+	}
 
 	/* if first part of line not to be printed, print leader */
 	if (yylead)

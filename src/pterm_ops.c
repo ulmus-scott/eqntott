@@ -75,10 +75,15 @@ int n;
 	int j = -1;
 
 	for (i = 0; i < n; i++, x++, y++)
-		if (*x != *y)
-			if (j > -1)
+		if (*x != *y) {
+			if (j > -1) {
 				return (-2);	/* 2nd discrepancy */
-			else	j = i;		/* first discrepancy */
+			}
+			else {
+				j = i;		/* first discrepancy */
+			}
+
+		}
 
 	return (j);
 }
@@ -108,10 +113,14 @@ int cmppth(const void *a_, const void *b_)
 	register int i;
 
 	for (i = ninputs, p = a[0]->ptand, q = b[0]->ptand; i; i--, p++, q++)
-		if (*p != *q)
-			if (*p < *q)
+		if (*p != *q) {
+			if (*p < *q) {
 				return (-1);
-			else	return (1);
+			}
+			else {
+				return (1);
+			}
+		}
 	return (0);
 	/*
 	if (a[0]->andhash == b[0]->andhash)

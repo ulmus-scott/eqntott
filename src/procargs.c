@@ -99,11 +99,14 @@ int procargs(int argc, char *argv[])
 
 	copyprefix( planame, files[0] );
 	
-	if (!key) 
-		if (f_flag)
+	if (!key) {
+		if (f_flag) {
 			key = (labels ? defkeyfx : defkeyf);
-		else
+		}
+		else {
 			key = (labels ? defkeyx : defkey);
+		}
+	}
 	for (s = key; *s; s++)
 		switch (*s) {
 		case 'e':
