@@ -30,6 +30,7 @@ extern char planame[];
 int main(int argc, char *argv[])
 {
 	int i, npts;
+	npts = 0;
 
 	if (procargs (argc, argv) || preprocess())
 		exit (1);

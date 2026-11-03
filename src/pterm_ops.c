@@ -152,6 +152,7 @@ PTERM *find_pterm (PTERM *pt, PTERM *pts[], int npts)
 	printf ("find_pterm (real hash=%ld): ", hsh);
 	putpt (pt);
 #endif
+	i = 0;
 	low = 0;
 	high = npts-1;
 	while (low <= high) {
