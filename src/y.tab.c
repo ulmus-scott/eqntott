@@ -89,6 +89,7 @@
 #line 9 "gram.y"
 
 #include "x.h"
+#include "yystuff.h"
 #include <stdio.h>
 #include <ctype.h>
 BNODE *new_bnode(), *copy_bnode();

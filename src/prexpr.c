@@ -5,9 +5,47 @@
  *	All rights reserved
  *
  */
+#include "prexpr.h"
 
 #include <stdio.h>
 #include "x.h"
+
+static int c_node = MIN_GNODE;
+
+static int new_num(void) {
+	return( ++c_node );
+}
+
+static void prnode(int num, int kind)
+{
+  extern struct Nt *inorder[], *outorder[];
+	switch( kind ) {
+	case INPUT:
+		switch( num ) {
+		case ZERO:
+			printf( " ZERO" );
+			break;
+		case ONE:
+			printf( " ONE" );
+			break;
+		case DONTCARE:
+			printf( " DONTCARE");
+			break;
+		default:
+			printf( " %s", inorder[num]->name );
+			break;
+		}
+		break;
+	case OUTPUT:
+		printf( " %s", outorder[num]->name );
+		break;
+	case INTERNAL:
+		printf( " %d", num );
+		break;
+	default:
+		printf( "internal error: unknown kind in prnode\n" );
+	}
+}
 
 void prexpr(BNODE *exp)
 {
@@ -186,41 +224,4 @@ void prgexpr(BNODE *exp, int node, int kind)
 	}
 
 	return;
-}
-
-void prnode(int num, int kind)
-{
-  extern struct Nt *inorder[], *outorder[];
-	switch( kind ) {
-	case INPUT:
-		switch( num ) {
-		case ZERO:
-			printf( " ZERO" );
-			break;
-		case ONE:
-			printf( " ONE" );
-			break;
-		case DONTCARE:
-			printf( " DONTCARE");
-			break;
-		default:
-			printf( " %s", inorder[num]->name );
-			break;
-		}
-		break;
-	case OUTPUT:
-		printf( " %s", outorder[num]->name );
-		break;
-	case INTERNAL:
-		printf( " %d", num );
-		break;
-	default:
-		printf( "internal error: unknown kind in prnode\n" );
-	}
-}
-
-static int c_node = MIN_GNODE;
-
-int new_num(void) {
-	return( ++c_node );
 }

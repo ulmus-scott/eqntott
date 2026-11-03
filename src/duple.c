@@ -6,8 +6,10 @@
  *
  */
 
+#include <stdlib.h>
 #include <stdio.h>
 #include "pterm.h"
+#include "pterm_ops.h"
 
 extern int ninputs;
 

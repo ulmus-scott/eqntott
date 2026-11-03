@@ -31,10 +31,6 @@
 #define MIN_OUTPUT 512		/* inputs start at 0, outputs at 512 */
 #define MIN_GNODE 1024		/* and internal nodes at 1024 */
 
-#define INPUT 1			/* code to decide what to print in prgexpr */
-#define OUTPUT 2
-#define INTERNAL 3
-
 struct Nt {
 	char *name;		/* variable name */
 	int isinput;		/* variable used as input? */

@@ -7,8 +7,11 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 #include "x.h"
+#include "prexpr.h"
 #include "pterm.h"
+#include "putpla.h"
 
 extern int ninputs, noutputs, nerrors;
 extern int f_flag, s_flag, need_parse, need_grind;
@@ -18,6 +21,8 @@ extern struct Nt nts[], *outorder[], *inorder[];
 long pthash();
 BNODE *exprs[NOUTPUTS], *canon(), *ecanon();
 PTERM *pts[NPTERMS], *read_ones();
+
+static int grind(PTERM *pts[], int npts);
 
 extern char planame[];
 
@@ -126,10 +131,7 @@ int main(int argc, char *argv[])
 	exit (0);
 }
 
-int
-grind (pts, npts)
-PTERM *pts[];
-int npts;
+int grind(PTERM *pts[], int npts)
 {
 	PTERM *pt, *ptexprs[NOUTPUTS];
 	int pass, changed, o, last;

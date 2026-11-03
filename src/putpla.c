@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "putpla.h"
 
 #include <stdio.h>
 #include "x.h"

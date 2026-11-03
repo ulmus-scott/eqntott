@@ -9,12 +9,14 @@ eqntott_SOURCES= \
  nt.c\
  preprocess.c\
  prexpr.c\
+ prexpr.h\
  procargs.c\
  pterm.c\
  pterm.h\
  pterm_ops.c\
  pterm_ops.h\
  putpla.c\
+ putpla.h\
  read_ones.c\
  reduce.c\
  rmcvd.c\
@@ -23,5 +25,6 @@ eqntott_SOURCES= \
  x.c\
  x.h\
  yystuff.c\
+ yystuff.h\
  y.tab.h\
  y.tab.c

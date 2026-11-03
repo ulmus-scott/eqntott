@@ -6,7 +6,9 @@
  *
  */
 
+#include <sys/wait.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /*
  * setup process's standard input to read from a succession

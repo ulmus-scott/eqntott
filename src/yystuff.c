@@ -9,9 +9,12 @@
 /*
  * yygetc, yyungetc, yyerror, yylex
  */
+#include "yystuff.h"
 
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
+#include <unistd.h>
 #include "x.h"
 #include "y.tab.h"
 
@@ -163,8 +166,7 @@ void yyerror(char *yyerrmsg)
 	return;
 }
 
-int
-yylex ()
+int yylex (void)
 {
 	int c, i = 0;
 	char *index();

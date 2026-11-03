@@ -8,6 +8,7 @@
 
 #include "x.h"
 #include "pterm_ops.h"
+#include "putpla.h"
 #include <stdio.h>
 
 extern int ninputs, noutputs;

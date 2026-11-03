@@ -35,6 +35,13 @@ char *defkeyx ="iolpte";/* default labeled output format control string */
 char *defkeyf="iopfte";	/* default for -f option */
 char *defkeyfx="iolpfte";/* default for -f with -l option */
 
+static void copyprefix(char *sout, char *sin) {
+	while( *sout++ = *sin++ )
+		if( *sin == '.' )
+			break;
+	*sout = 0;
+}
+
 int
 procargs (argc, argv)
 int argc;
@@ -135,13 +142,6 @@ usage:
 	fprintf (stderr, 
 	"\"key\" is built from I, O, S, e, f, h, i, l, n, o, p, t, and v.\n");
 	return (1);
-}
-
-void copyprefix(char *sout, char *sin) {
-	while( *sout++ = *sin++ )
-		if( *sin == '.' )
-			break;
-	*sout = 0;
 }
 
 void set_planame(char *name) {

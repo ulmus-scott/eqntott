@@ -13,6 +13,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "x.h"
+#include "yystuff.h"
 
 struct Nt nts[NTSIZE];
 struct Nt *inorder[NINPUTS];
@@ -37,16 +38,23 @@ void nt_init(void)
 	return;
 }
 
+int nt_compar(char *nt1, struct Nt *nt2)
+{
+	return (strcmp (nt1, nt2->name));
+}
+
+int nt_open(struct Nt *nt)
+{
+	return (!nt->name);
+}
+
 /*
  * add name to name table if not present
  */
 
-struct Nt *
-nt_update (name)
-char *name;
+struct Nt* nt_update(char *name)
 {
 	struct Nt *nt, *slot;
-	int nt_compar(), nt_open();
 	char *store(), *hsearch();
 
 	nt = (struct Nt *) hsearch (name, (char *) nts, NTSIZE, 
@@ -75,9 +83,7 @@ char *name;
  * find/add new input variable
  */
 
-int
-nt_input (name)
-char *name;
+int nt_input(char *name)
 {
 	struct Nt *nt;
 
@@ -104,9 +110,7 @@ char *name;
  * find/add new output variable
  */
 
-int
-nt_output (name)
-char *name;
+int nt_output(char *name)
 {
 	struct Nt *nt;
 
@@ -127,19 +131,4 @@ char *name;
 	nt->isoutput = 1;
 	nt->outord = noutputs;
 	return (noutputs++);
-}
-
-int
-nt_compar (nt1, nt2)
-char *nt1;
-struct Nt *nt2;
-{
-	return (strcmp (nt1, nt2->name));
-}
-
-int
-nt_open (nt)
-struct Nt *nt;
-{
-	return (!nt->name);
 }

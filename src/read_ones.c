@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "prexpr.h"
 #include "pterm.h"
 #include "pterm_ops.h"
 extern int ninputs;
