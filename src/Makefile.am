@@ -7,6 +7,7 @@ eqntott_SOURCES= \
  hash.c\
  merge.c\
  nt.c\
+ nt.h\
  preprocess.c\
  prexpr.c\
  prexpr.h\

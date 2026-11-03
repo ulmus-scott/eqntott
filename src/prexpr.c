@@ -8,6 +8,7 @@
 #include "prexpr.h"
 
 #include <stdio.h>
+#include "nt.h"
 #include "x.h"
 
 static int c_node = MIN_GNODE;

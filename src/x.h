@@ -13,10 +13,6 @@
 
 #define MAXSTR 512
 
-#define NINPUTS 128
-#define NOUTPUTS 128
-#define NPTERMS 65536
-#define NTSIZE NINPUTS+NOUTPUTS
 #define NSUBSTITUTE 10
 
 #define AND -1
@@ -30,14 +26,6 @@
 
 #define MIN_OUTPUT 512		/* inputs start at 0, outputs at 512 */
 #define MIN_GNODE 1024		/* and internal nodes at 1024 */
-
-struct Nt {
-	char *name;		/* variable name */
-	int isinput;		/* variable used as input? */
-	int isoutput;		/* variable used as output? */
-	int inord;		/* index into inorder */
-	int outord;		/* index into outorder */
-};
 
 typedef struct Btreenode {
 	int value;			/* operator name or leaf value */

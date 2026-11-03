@@ -9,10 +9,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include "nt.h"
 #include "x.h"
 #define X(a) pts[a]->index
 
-extern int ninputs, noutputs;
 extern char *ego;
 
 #include "pterm_ops.h"

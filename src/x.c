@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "x.h"
+#include "nt.h"
 #include "prexpr.h"
 #include "procargs.h"
 #include "pterm.h"
@@ -17,7 +18,6 @@
 extern int ninputs, noutputs, nerrors;
 extern int f_flag, s_flag, need_parse, need_grind;
 extern char *ego, *key;
-extern struct Nt nts[], *outorder[], *inorder[];
 
 long pthash();
 BNODE *exprs[NOUTPUTS], *canon(), *ecanon();

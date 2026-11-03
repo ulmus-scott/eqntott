@@ -9,11 +9,10 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "nt.h"
 #include "pterm.h"
 
-extern int ninputs, noutputs;
 extern int f_flag;
-extern struct Nt nts[], *inorder[], *outorder[];
 
 void putpla(PTERM *pts[], int npts)
 /*

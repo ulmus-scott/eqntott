@@ -9,6 +9,7 @@
 /*
  * nt_init, nt_update, nt_input, nt_output, nt_compar, nt_open
  */
+#include "nt.h"
 
 #include <stdio.h>
 #include <string.h>

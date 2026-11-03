@@ -88,6 +88,7 @@
 /* Copy the first part of user declarations.  */
 #line 9 "gram.y"
 
+#include "nt.h"
 #include "procargs.h"
 #include "x.h"
 #include "yystuff.h"

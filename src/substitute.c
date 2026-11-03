@@ -10,6 +10,7 @@
  * substitute
  */
 
+#include "nt.h"
 #include "x.h"
 
 extern BNODE *exprs[];

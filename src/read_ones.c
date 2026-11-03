@@ -15,11 +15,10 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "nt.h"
 #include "prexpr.h"
 #include "pterm.h"
 #include "pterm_ops.h"
-extern int ninputs;
-extern struct Nt nts[], *outorder[];
 extern char *ego;
 
 PTERM *
