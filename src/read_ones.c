@@ -138,7 +138,7 @@ register PTERM *pt;
 	}
 	npts = i;
 	if (npts > NPTERMS) {
-		fprintf (stderr, "%s: compress: too many pterms\n");
+		fprintf (stderr, "%s: compress: too many pterms\n", ego);
 		return (pts[0]);
 	}
 	npts = duple (pts, npts);
