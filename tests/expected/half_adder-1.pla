@@ -1,0 +1,10 @@
+.i 2
+.o 2
+.na half_adder
+.ilb  A B
+.ob  SUM CARRY
+.p 3
+01  1 0 
+10  1 0 
+11  0 1 
+.e

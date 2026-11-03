@@ -1,0 +1,5 @@
+#define xor(a,b) (!a & b | a & !b)
+NAME = xor;
+INORDER = a b;
+OUTORDER = c;
+c = xor(a, b);

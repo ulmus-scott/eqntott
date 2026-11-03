@@ -1,0 +1,5 @@
+NAME = s;
+INORDER = a b;
+OUTORDER = d;
+c = a | b;
+d = !c;

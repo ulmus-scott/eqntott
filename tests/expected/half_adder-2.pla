@@ -1,0 +1,12 @@
+eqntott 9.0
+.na half_adder
+.ilb  A B
+.ob  SUM CARRY
+2 inputs, 2 outputs, 3 product terms.
+SUM	!A	B
+SUM	A	!B
+CARRY	A	B
+.p 3
+01  1 0 
+10  1 0 
+11  0 1 

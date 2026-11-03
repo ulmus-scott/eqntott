@@ -1,0 +1,9 @@
+.i 2
+.o 1
+.na xor
+.ilb  a b
+.ob  c
+.p 2
+01  1 
+10  1 
+.e

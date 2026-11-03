@@ -1,0 +1,4 @@
+NAME = f;
+INORDER = a;
+OUTORDER = a;
+a = !a;

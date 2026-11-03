@@ -1,0 +1,4 @@
+NAME = reduce;
+INORDER = x y;
+OUTORDER = z;
+z = x & y | x;

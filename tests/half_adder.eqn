@@ -1,0 +1,5 @@
+NAME = half_adder;
+INORDER = A B;
+OUTORDER = SUM CARRY;
+CARRY = A & B;
+SUM = (!A & B) | (A & !B);

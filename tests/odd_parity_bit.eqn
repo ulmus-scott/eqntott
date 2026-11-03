@@ -1,0 +1,5 @@
+#define xor(a,b) (!a & b | a & !b)
+NAME = odd_parity_bit;
+INORDER = x y z;
+OUTORDER = p;
+p = !(xor(xor(x, y), z));

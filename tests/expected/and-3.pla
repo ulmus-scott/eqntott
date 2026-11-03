@@ -1,0 +1,11 @@
+PLA Connectivity Summary
+
+#pterms	input
+1	b
+1	a
+
+#pterms	output
+1	c
+
+#out	#in	product term expression
+1	2	a & b

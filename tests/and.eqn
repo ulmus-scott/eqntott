@@ -1,0 +1,4 @@
+NAME = and;
+INORDER = a b;
+OUTORDER = c;
+c = a & b;
