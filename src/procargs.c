@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "procargs.h"
 
 #include <stdio.h>
 #ifndef MAXSTR
@@ -42,10 +43,7 @@ static void copyprefix(char *sout, char *sin) {
 	*sout = 0;
 }
 
-int
-procargs (argc, argv)
-int argc;
-char *argv[];
+int procargs(int argc, char *argv[])
 {
 	register arg;
 	char *s;

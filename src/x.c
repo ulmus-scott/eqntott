@@ -10,6 +10,7 @@
 #include <string.h>
 #include "x.h"
 #include "prexpr.h"
+#include "procargs.h"
 #include "pterm.h"
 #include "putpla.h"
 

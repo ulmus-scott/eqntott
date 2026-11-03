@@ -11,6 +11,7 @@ eqntott_SOURCES= \
  prexpr.c\
  prexpr.h\
  procargs.c\
+ procargs.h\
  pterm.c\
  pterm.h\
  pterm_ops.c\
