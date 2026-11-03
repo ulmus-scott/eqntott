@@ -37,7 +37,7 @@ char *defkeyf="iopfte";	/* default for -f option */
 char *defkeyfx="iolpfte";/* default for -f with -l option */
 
 static void copyprefix(char *sout, char *sin) {
-	while( *sout++ = *sin++ )
+	while( (*sout++ = *sin++) )
 		if( *sin == '.' )
 			break;
 	*sout = 0;

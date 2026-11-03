@@ -84,7 +84,8 @@ void yyerror(char *yyerrmsg)
 	/* try to find end of last line */
 	for (yyp = yycharno-1; yyp >= 0 && yyinbuf[yyp] != '\n'; yyp--);
 	
-	if (yylead = (yyp < 0))
+	yylead = (yyp < 0);
+	if (yylead)
 		/* line started in previous buffer */
 		;
 	else	yyp++;
