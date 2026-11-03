@@ -17,9 +17,7 @@ extern char *ego;
 
 #include "pterm_ops.h"
 
-find_index (pts, npts, x, start, finish)
-PTERM *pts[];
-int npts, x, *start, *finish;
+void find_index(PTERM *pts[], int npts, int x, int *start, int *finish)
 /*
  * This function searches the index components of "pts" looking
  * for the first and last pterms with index level "x".

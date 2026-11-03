@@ -50,9 +50,7 @@ yygetc()
 		else	return ((int) yyinbuf[yycharno]);
 }
 
-static 
-yyungetc (yyc)
-int yyc;
+static void yyungetc(int yyc)
 {
 	/* where possible, just backup "yycharno" instead of save */
 
@@ -65,8 +63,7 @@ int yyc;
 	return;
 }
 
-yyerror (yyerrmsg)
-char *yyerrmsg;
+void yyerror(char *yyerrmsg)
 {
 	register int yyp, yyq, yyr;
 	int yylead, yytrail, yylen;

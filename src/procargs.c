@@ -137,14 +137,14 @@ usage:
 	return (1);
 }
 
-copyprefix( sout, sin ) char *sout, *sin; {
+void copyprefix(char *sout, char *sin) {
 	while( *sout++ = *sin++ )
 		if( *sin == '.' )
 			break;
 	*sout = 0;
 }
 
-set_planame( name ) char *name; {
+void set_planame(char *name) {
 	int i;
 	for( i = 0; name[i] != 0; i++ ) {
 		planame[i] = name[i];

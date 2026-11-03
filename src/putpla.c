@@ -14,9 +14,7 @@ extern int ninputs, noutputs;
 extern int f_flag;
 extern struct Nt nts[], *inorder[], *outorder[];
 
-putpla (pts, npts)
-PTERM *pts[];
-int npts;
+void putpla(PTERM *pts[], int npts)
 /*
  * Print and- and or-plane matrix values.
  */
@@ -32,8 +30,7 @@ int npts;
 	return;
 }
 
-putpt (pt)
-register PTERM *pt;
+void putpt(register PTERM *pt)
 {
 	register int j;
 	int spaceout;
@@ -57,9 +54,7 @@ register PTERM *pt;
 	return;
 }
 
-putrpla (pts, npts)
-PTERM *pts[];
-int npts;
+void putrpla(PTERM *pts[], int npts)
 /*
  * Print and- and or-plane matrix values in human readable form.
  */
@@ -113,9 +108,7 @@ int npts;
 	return;
 }
 
-putSpla (pts, npts)
-PTERM *pts[];
-int npts;
+void putSpla(PTERM *pts[], int npts)
 /*
  * print summary of pla product terms
  */

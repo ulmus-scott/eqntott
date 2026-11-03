@@ -9,8 +9,7 @@
 #include <stdio.h>
 #include "x.h"
 
-prexpr (exp)
-BNODE *exp;
+void prexpr(BNODE *exp)
 {
 	extern struct Nt nts[];
 	extern struct Nt *inorder[];
@@ -57,8 +56,7 @@ BNODE *exp;
 	return;
 }
 
-prlexpr (exp)
-BNODE *exp;
+void prlexpr(BNODE *exp)
 {
 	extern struct Nt nts[];
 	extern struct Nt *inorder[];
@@ -106,8 +104,7 @@ BNODE *exp;
 	return;
 }
 
-prgexpr (exp, node, kind)
-BNODE *exp;
+void prgexpr(BNODE *exp, int node, int kind)
 {
 	extern struct Nt nts[];
 	extern struct Nt *inorder[], *outorder[];
@@ -191,7 +188,7 @@ BNODE *exp;
 	return;
 }
 
-prnode( num, kind )
+void prnode(int num, int kind)
 {
   extern struct Nt *inorder[], *outorder[];
 	switch( kind ) {
@@ -224,6 +221,6 @@ prnode( num, kind )
 
 static int c_node = MIN_GNODE;
 
-new_num() {
+int new_num(void) {
 	return( ++c_node );
 }

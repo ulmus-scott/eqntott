@@ -110,9 +110,7 @@ int o;
 	}
 }
 
-contradiction (exp, o)
-BNODE *exp;
-int o;
+void contradiction(BNODE *exp, int o)
 /*
  * a logical contradiction has been found.
  */

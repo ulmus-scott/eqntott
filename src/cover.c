@@ -12,9 +12,7 @@
 
 extern int ninputs, noutputs;
 
-cover (pts, npts)
-PTERM *pts[];
-int npts;
+void cover(PTERM *pts[], int npts)
 /*
  * run through all of the product terms and if a product term is
  * properly dominated by another, mark the former as covered.

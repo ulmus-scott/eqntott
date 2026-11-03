@@ -26,7 +26,7 @@ extern int f_flag, s_flag;
  * initialize name table
  */
 
-nt_init ()
+void nt_init(void)
 {
 	register struct Nt *p = nts;
 	register int i = NTSIZE;

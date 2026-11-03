@@ -21,9 +21,7 @@ PTERM *pts[NPTERMS], *read_ones();
 
 extern char planame[];
 
-main (argc, argv)
-int argc; 
-char *argv[];
+int main(int argc, char *argv[])
 {
 	int i, npts;
 

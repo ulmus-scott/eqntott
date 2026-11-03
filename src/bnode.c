@@ -28,8 +28,7 @@
 #define CHUNK 1024
 static BNODE *freePtr = 0;
 
-static
-get_free ()
+static void get_free(void)
 {
 	register BNODE *bnodes;
 	register int i;
