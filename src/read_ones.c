@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include "x.h"
+#include "bnode.h"
 #include "nt.h"
 #include "prexpr.h"
 #include "pterm.h"

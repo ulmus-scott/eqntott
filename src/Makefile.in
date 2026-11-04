@@ -152,6 +152,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 eqntott_SOURCES = \
  bnode.c\
+ bnode.h\
  canon.c\
  cover.c\
  duple.c\

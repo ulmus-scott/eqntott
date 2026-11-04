@@ -88,13 +88,13 @@
 /* Copy the first part of user declarations.  */
 #line 9 "gram.y"
 
+#include "bnode.h"
 #include "nt.h"
 #include "procargs.h"
 #include "x.h"
 #include "yystuff.h"
 #include <stdio.h>
 #include <ctype.h>
-BNODE *new_bnode(), *copy_bnode();
 extern char yytext[];
 extern BNODE *exprs[];
 extern int noutputs;

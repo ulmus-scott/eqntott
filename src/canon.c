@@ -10,8 +10,7 @@
  * "canon" rewrites an expression tree by applying a few Boolean
  * rules so that the "!" operator only is applied to (leaf) variables.
  */
-
-#include "x.h"
+#include "bnode.h"
 
 BNODE *
 canon (exp)

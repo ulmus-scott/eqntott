@@ -9,7 +9,7 @@
 #ifndef PREXPR_H
 #define PREXPR_H
 
-#include "x.h"
+#include "bnode.h"
 
 #define INPUT 1			/* code to decide what to print in prgexpr */
 #define OUTPUT 2

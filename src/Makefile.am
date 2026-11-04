@@ -1,6 +1,7 @@
 bin_PROGRAMS=eqntott
 eqntott_SOURCES= \
  bnode.c\
+ bnode.h\
  canon.c\
  cover.c\
  duple.c\

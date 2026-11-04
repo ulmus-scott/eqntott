@@ -10,6 +10,7 @@
  * substitute
  */
 
+#include "bnode.h"
 #include "nt.h"
 #include "x.h"
 
@@ -21,7 +22,6 @@ substitute (exp, new_exp)
 BNODE *exp, **new_exp;
 {
 	int changed = 0;
-	BNODE *copy_bnode();
 
 	switch (exp->value) {
 	case AND:

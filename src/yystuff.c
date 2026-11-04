@@ -12,10 +12,11 @@
 #include "yystuff.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
-#include "x.h"
+#include "bnode.h"
 #include "y.tab.h"
 
 int atoi();

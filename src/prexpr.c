@@ -8,6 +8,8 @@
 #include "prexpr.h"
 
 #include <stdio.h>
+
+#include "bnode.h"
 #include "nt.h"
 #include "x.h"
 
