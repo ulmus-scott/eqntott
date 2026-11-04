@@ -63,3 +63,7 @@ git diff --no-index expected/ALU74181_part_1.pla ALU74181_part_1.pla
 
 time ../src/eqntott -l -s -r ALU74181_part_2.eqn > ALU74181_part_2.pla
 git diff --no-index expected/ALU74181_part_2.pla ALU74181_part_2.pla
+
+# Full adder example
+../src/eqntott -l -r full_adder.eqn > full_adder.pla
+git diff --no-index expected/full_adder.pla full_adder.pla

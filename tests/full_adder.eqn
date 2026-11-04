@@ -1,0 +1,5 @@
+NAME = full_adder;
+INORDER = A B C_IN;
+OUTORDER = SUM C_OUT;
+C_OUT = (A & B) | (A & C_IN) | (B & C_IN);
+SUM = (A & !B & !C_IN) | (!A & B & !C_IN) | (!A & !B & C_IN) | (A & B & C_IN);
