@@ -1,0 +1,40 @@
+#define P_BAR(a, b) (!((!(b) & S_1) | (S_0 & (b)) | (a)))
+#define G_BAR(a, b) (!(((b) & S_3 & (a)) | ((a) & S_2 & !(b))))
+#define xor(a, b) (!(a) & (b) | (a) & !(b))
+NAME = ALU74181;
+INORDER = M S_3 S_2 S_1 S_0 B_3 B_2 B_1 B_0 A_3 A_2 A_1 A_0 C_N_BAR;
+OUTORDER = C_N_PLUS_4_BAR F_3 F_2 F_1 F_0 EQUAL Y X;
+// internal nodes
+P_3_BAR = P_BAR(A_3, B_3);
+G_3_BAR = G_BAR(A_3, B_3);
+P_2_BAR = P_BAR(A_2, B_2);
+G_2_BAR = G_BAR(A_2, B_2);
+P_1_BAR = P_BAR(A_1, B_1);
+G_1_BAR = G_BAR(A_1, B_1);
+P_0_BAR = P_BAR(A_0, B_0);
+G_0_BAR = G_BAR(A_0, B_0);
+
+C_N_PLUS_4_BAR = !Y | (!X & C_N_BAR);
+EQUAL = F_3 & F_2 & F_1 & F_0;
+X = !(G_3_BAR & G_2_BAR & G_1_BAR & G_0_BAR);
+Y = !(P_3_BAR
+        | (G_3_BAR & P_2_BAR)
+        | (G_3_BAR & G_2_BAR & P_1_BAR)
+        | (G_3_BAR & G_2_BAR & G_1_BAR & P_0_BAR));
+F_0 = xor(xor(P_0_BAR, G_0_BAR), (!(C_N_BAR & !M)));
+F_1 = xor(xor(P_1_BAR, G_1_BAR), (!((C_N_BAR & G_0_BAR & !M) | (P_0_BAR & !M))));
+F_2 = xor(xor(P_2_BAR, G_2_BAR),
+            (!(
+                (C_N_BAR & G_0_BAR & G_1_BAR & !M)
+                | (G_1_BAR & P_0_BAR & !M)
+                | (P_1_BAR & !M)
+               ))
+          );
+F_3 = xor(xor(P_3_BAR, G_3_BAR),
+            (!(
+                (C_N_BAR & G_0_BAR & G_1_BAR & G_2_BAR & !M)
+                | (G_1_BAR & G_2_BAR & P_0_BAR & !M)
+                | (G_2_BAR & P_1_BAR & !M)
+                | (P_2_BAR & !M)
+               ))
+          );

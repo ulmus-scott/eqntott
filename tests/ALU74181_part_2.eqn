@@ -1,0 +1,31 @@
+#define P_BAR(a, b) (!((!(b) & S_1) | (S_0 & (b)) | (a)))
+#define G_BAR(a, b) (!(((b) & S_3 & (a)) | ((a) & S_2 & !(b))))
+#define xor(a, b) (!(a) & (b) | (a) & !(b))
+NAME = ALU74181_part_2;
+INORDER = M C_N_BAR P_3_BAR G_3_BAR P_2_BAR G_2_BAR P_1_BAR G_1_BAR P_0_BAR G_0_BAR;
+OUTORDER = C_N_PLUS_4_BAR F_3 F_2 F_1 F_0 EQUAL Y X;
+
+C_N_PLUS_4_BAR = !Y | (!X & C_N_BAR);
+EQUAL = F_3 & F_2 & F_1 & F_0;
+X = !(G_3_BAR & G_2_BAR & G_1_BAR & G_0_BAR);
+Y = !(P_3_BAR
+        | (G_3_BAR & P_2_BAR)
+        | (G_3_BAR & G_2_BAR & P_1_BAR)
+        | (G_3_BAR & G_2_BAR & G_1_BAR & P_0_BAR));
+F_0 = xor(xor(P_0_BAR, G_0_BAR), (!(C_N_BAR & !M)));
+F_1 = xor(xor(P_1_BAR, G_1_BAR), (!((C_N_BAR & G_0_BAR & !M) | (P_0_BAR & !M))));
+F_2 = xor(xor(P_2_BAR, G_2_BAR),
+            (!(
+                (C_N_BAR & G_0_BAR & G_1_BAR & !M)
+                | (G_1_BAR & P_0_BAR & !M)
+                | (P_1_BAR & !M)
+               ))
+          );
+F_3 = xor(xor(P_3_BAR, G_3_BAR),
+            (!(
+                (C_N_BAR & G_0_BAR & G_1_BAR & G_2_BAR & !M)
+                | (G_1_BAR & G_2_BAR & P_0_BAR & !M)
+                | (G_2_BAR & P_1_BAR & !M)
+                | (P_2_BAR & !M)
+               ))
+          );

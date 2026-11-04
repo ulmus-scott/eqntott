@@ -44,3 +44,22 @@ git diff --no-index expected/xor.pla xor.pla
 # Test C preprocessor
 ../src/eqntott -l odd_parity_bit.eqn > odd_parity_bit.pla
 git diff --no-index expected/odd_parity_bit.pla odd_parity_bit.pla
+
+# 74181 ALU examples
+time ../src/eqntott -l -s ALU74181.eqn > ALU74181.pla
+git diff --no-index expected/ALU74181.pla ALU74181.pla
+
+time ../src/eqntott -l -s -r ALU74181.eqn > ALU74181-r.pla
+git diff --no-index expected/ALU74181-r.pla ALU74181-r.pla
+
+time ../src/eqntott -l -s ALU74181_internal_PG.eqn > ALU74181_internal_PG.pla
+git diff --no-index expected/ALU74181_internal_PG.pla ALU74181_internal_PG.pla
+
+time ../src/eqntott -l -s -r ALU74181_internal_PG.eqn > ALU74181_internal_PG-r.pla
+git diff --no-index expected/ALU74181_internal_PG-r.pla ALU74181_internal_PG-r.pla
+
+time ../src/eqntott -l -r ALU74181_part_1.eqn > ALU74181_part_1.pla
+git diff --no-index expected/ALU74181_part_1.pla ALU74181_part_1.pla
+
+time ../src/eqntott -l -s -r ALU74181_part_2.eqn > ALU74181_part_2.pla
+git diff --no-index expected/ALU74181_part_2.pla ALU74181_part_2.pla
