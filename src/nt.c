@@ -84,14 +84,9 @@ int hash(register char *s, int hshsiz)
  *	hash is called for first hash, linear rehash used.
  */
 
-struct Nt *
-hsearch (key, base, nel, compar, open, slot)
-char *key;
-register struct Nt *base;
-int nel;
-int (*compar)(char *, struct Nt *);
-int (*open)(struct Nt *);
-struct Nt **slot;
+struct Nt* hsearch(char* key, register struct Nt *base, int nel,
+                   int (*compar)(char *, struct Nt *), int (*open)(struct Nt *),
+                   struct Nt **slot)
 {
 	register int i = hash (key, nel);
 	int nnel;
