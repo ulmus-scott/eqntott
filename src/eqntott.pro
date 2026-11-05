@@ -20,7 +20,6 @@ SOURCES += cover.c
 HEADERS += cover.h
 SOURCES += duple.c
 HEADERS += duple.h
-SOURCES += hash.c
 SOURCES += merge.c
 HEADERS += merge.h
 SOURCES += nt.c
