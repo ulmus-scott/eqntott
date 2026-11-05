@@ -46,17 +46,10 @@ int cmppt(const void *a_, const void *b_)
 	for (i = 0; i < ninputs; i++) {
 		aa = a[0]->ptand[i];
 		bb = b[0]->ptand[i];
-		if (aa == 2)
-			aa = 0;
-		if (bb == 2)
-			bb = 0;
-		if (aa != bb) {
-			if (aa < bb) {
-				return (-1);
-			}
-			else	{
-				return (1);
-			}
+		// Sort 2 (don't care) as equivalent to 0 and less than 1
+		int ret = (aa & 1) - (bb & 1);
+		if (ret != 0) {
+			return ret;
 		}
 	}
 	return (0);
