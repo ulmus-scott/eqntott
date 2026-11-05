@@ -5,7 +5,7 @@ CONFIG -= qt
 
 QMAKE_CFLAGS += -Wundef
 #CONFIG += c11 c17 strict_c
-QMAKE_CFLAGS += -std=c17
+QMAKE_CFLAGS += -std=c23
 QMAKE_CFLAGS += -g
 
 DEFINES += _POSIX_C_SOURCE=202405L
