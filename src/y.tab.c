@@ -86,7 +86,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 9 "gram.y"
+//#line 9 "gram.y"
 
 #include "bnode.h"
 #include "nt.h"
@@ -120,13 +120,13 @@ extern int noutputs;
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 19 "gram.y"
+//#line 19 "gram.y"
 {
 	BNODE *bnodeval;
 	int intval;
 }
 /* Line 187 of yacc.c.  */
-#line 127 "y.tab.c"
+//#line 127 "y.tab.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -139,7 +139,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 140 "y.tab.c"
+//#line 140 "y.tab.c"
 
 #ifdef short
 # undef short
@@ -1342,7 +1342,7 @@ yyreduce:
   switch (yyn)
     {
         case 8:
-#line 42 "gram.y"
+//#line 42 "gram.y"
     {
 			  if (exprs[(yyvsp[(1) - (4)].intval)])
 				exprs[(yyvsp[(1) - (4)].intval)] = new_bnode (OR, (yyvsp[(3) - (4)].bnodeval), exprs[(yyvsp[(1) - (4)].intval)]);
@@ -1351,73 +1351,73 @@ yyreduce:
     break;
 
   case 13:
-#line 58 "gram.y"
+//#line 58 "gram.y"
     { (yyval.bnodeval) = new_bnode (OR, (yyvsp[(1) - (3)].bnodeval), (yyvsp[(3) - (3)].bnodeval)); }
     break;
 
   case 14:
-#line 60 "gram.y"
+//#line 60 "gram.y"
     { (yyval.bnodeval) = new_bnode (AND, (yyvsp[(1) - (3)].bnodeval), (yyvsp[(3) - (3)].bnodeval)); }
     break;
 
   case 15:
-#line 62 "gram.y"
+//#line 62 "gram.y"
     { (yyval.bnodeval) = new_bnode (NOT, (yyvsp[(2) - (2)].bnodeval), NIL_BNODE); }
     break;
 
   case 16:
-#line 64 "gram.y"
+//#line 64 "gram.y"
     { (yyval.bnodeval) = new_bnode ((yyvsp[(1) - (1)].intval), NIL_BNODE, NIL_BNODE); }
     break;
 
   case 17:
-#line 66 "gram.y"
+//#line 66 "gram.y"
     { (yyval.bnodeval) = new_bnode (ZERO, NIL_BNODE, NIL_BNODE); }
     break;
 
   case 18:
-#line 68 "gram.y"
+//#line 68 "gram.y"
     { (yyval.bnodeval) = new_bnode (ZERO, NIL_BNODE, NIL_BNODE); }
     break;
 
   case 19:
-#line 70 "gram.y"
+//#line 70 "gram.y"
     { (yyval.bnodeval) = new_bnode (ONE, NIL_BNODE, NIL_BNODE); }
     break;
 
   case 20:
-#line 72 "gram.y"
+//#line 72 "gram.y"
     { (yyval.bnodeval) = new_bnode (ONE, NIL_BNODE, NIL_BNODE); }
     break;
 
   case 21:
-#line 74 "gram.y"
+//#line 74 "gram.y"
     { (yyval.bnodeval) = new_bnode (DONTCARE, NIL_BNODE, NIL_BNODE); }
     break;
 
   case 22:
-#line 76 "gram.y"
+//#line 76 "gram.y"
     { (yyval.bnodeval) = (yyvsp[(2) - (3)].bnodeval); }
     break;
 
   case 23:
-#line 80 "gram.y"
+//#line 80 "gram.y"
     { (yyval.intval) = nt_output (yytext); }
     break;
 
   case 24:
-#line 84 "gram.y"
+//#line 84 "gram.y"
     { (yyval.intval) = nt_input (yytext); }
     break;
 
   case 25:
-#line 88 "gram.y"
+//#line 88 "gram.y"
     { set_planame (yytext); }
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1432 "y.tab.c"
+//#line 1432 "y.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1631,6 +1631,6 @@ yyreturn:
 }
 
 
-#line 91 "gram.y"
+//#line 91 "gram.y"
 
 

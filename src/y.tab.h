@@ -60,13 +60,13 @@
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 19 "gram.y"
+//#line 19 "gram.y"
 {
 	BNODE *bnodeval;
 	int intval;
 }
 /* Line 1489 of yacc.c.  */
-#line 70 "y.tab.h"
+//#line 70 "y.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
