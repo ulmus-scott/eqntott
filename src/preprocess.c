@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "preprocess.h"
 
 #include <sys/wait.h>
 #include <stdlib.h>
@@ -20,8 +21,7 @@ extern char *Argv[], *files[];
 extern int Argc, nfiles;
 
 
-int
-preprocess()
+int preprocess(void)
 {
 	int p[2], i;
 

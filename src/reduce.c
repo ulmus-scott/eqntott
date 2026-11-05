@@ -5,16 +5,15 @@
  *	All rights reserved
  *
  */
+#include "reduce.h"
 
 #include <stdio.h>
+#include "cover.h"
 #include "pterm.h"
 
 extern int r_flag, R_flag;
 
-int 
-reduce (pts, npts)
-PTERM *pts[];
-int npts;
+int reduce(PTERM *pts[], int npts)
 {
 	int i, changed = 1, merge (), duple (), rmcvd ();
 

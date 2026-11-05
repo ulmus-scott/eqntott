@@ -5,13 +5,12 @@
  *	All rights reserved
  *
  */
+#include "rmcvd.h"
 
 #include <stdio.h>
 #include "pterm.h"
 
-int rmcvd (pts, npts)
-PTERM *pts[];
-int npts;
+int rmcvd (PTERM *pts[], int npts)
 /*
  * I remove PTERM's with the "covered" bit set, and return new
  * number of PTERMS in "pts".

@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "cover.h"
 
 #include "x.h"
 #include "pterm_ops.h"

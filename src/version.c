@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "version.h"
 
 #include <stdio.h>
 #include "config.h"

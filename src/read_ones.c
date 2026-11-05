@@ -16,10 +16,13 @@
 #include <stdio.h>
 #include "x.h"
 #include "bnode.h"
+#include "duple.h"
 #include "nt.h"
 #include "prexpr.h"
 #include "pterm.h"
 #include "pterm_ops.h"
+#include "rmcvd.h"
+
 extern char *ego;
 
 PTERM *

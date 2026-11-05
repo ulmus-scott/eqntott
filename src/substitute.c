@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "substitute.h"
 
 /*
  * substitute
@@ -17,9 +18,7 @@
 extern BNODE *exprs[];
 extern struct Nt *inorder[];
 
-int
-substitute (exp, new_exp)
-BNODE *exp, **new_exp;
+int substitute (BNODE* exp, BNODE** new_exp)
 {
 	int changed = 0;
 

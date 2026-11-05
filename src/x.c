@@ -10,10 +10,16 @@
 #include <string.h>
 #include "x.h"
 #include "nt.h"
+#include "preprocess.h"
 #include "prexpr.h"
 #include "procargs.h"
 #include "pterm.h"
+#include "pterm_ops.h"
 #include "putpla.h"
+#include "reduce.h"
+#include "substitute.h"
+#include "version.h"
+#include "yyparse.h"
 
 extern int ninputs, noutputs, nerrors;
 extern int f_flag, s_flag, need_parse, need_grind;

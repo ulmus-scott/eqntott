@@ -4,12 +4,15 @@ eqntott_SOURCES= \
  bnode.h\
  canon.c\
  cover.c\
+ cover.h\
  duple.c\
+ duple.h\
  hash.c\
  merge.c\
  nt.c\
  nt.h\
  preprocess.c\
+ preprocess.h\
  prexpr.c\
  prexpr.h\
  procargs.c\
@@ -21,12 +24,17 @@ eqntott_SOURCES= \
  putpla.c\
  putpla.h\
  read_ones.c\
+ read_ones.h\
  reduce.c\
+ reduce.h\
  rmcvd.c\
+ rmcvd.h\
  substitute.c\
- version.c\
+ substitute.h\
+ version.h\
  x.c\
  x.h\
+ yyparse.h\
  yystuff.c\
  yystuff.h\
  y.tab.h\

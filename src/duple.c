@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "duple.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -13,9 +14,7 @@
 
 extern int ninputs;
 
-int duple (pts, npts)
-PTERM *pts[];
-int npts;
+int duple (PTERM *pts[], int npts)
 {
 	int cmppth (), cmpv ();
 	register int i, k;
