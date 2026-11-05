@@ -25,10 +25,7 @@
 
 extern char *ego;
 
-PTERM *
-read_ones  (exp, o)
-BNODE *exp;
-int o;
+PTERM* read_ones(BNODE *exp, int o)
 {
 	register PTERM *L, *R;
 	register int i;
@@ -126,9 +123,7 @@ void contradiction(BNODE *exp, int o)
 	return;
 }
 
-PTERM *
-compress (pt)
-register PTERM *pt;
+PTERM* compress(register PTERM *pt)
 {
 	extern PTERM *pts[];
 	register int i;

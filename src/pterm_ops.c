@@ -62,9 +62,7 @@ int cmppt(const void *a_, const void *b_)
 	return (0);
 }
 
-int cmpv (x, y, n)
-register BIT *x, *y;
-int n;
+int cmpv(register BIT *x, register BIT *y, int n)
 /*
  * return -1 if x[i] = y[i] for 0 <= i < n;
  * return j>-1 if x[i] = y[i] for all i except i != j;
@@ -197,10 +195,7 @@ void orpt (PTERM *pt1, PTERM *pt2)
 	return;
 }
 
-long
-pthash (inv, n)
-BIT *inv;
-int n;
+long pthash(BIT *inv, int n)
 /*
  * form the sum of no more than the first 20 elements of inv:
  * sum inv[i] * 3 ** (i - 1);
@@ -217,10 +212,7 @@ int n;
 	return (sum);
 }
 
-int 
-ptindex (inv, n)
-BIT *inv;
-int n;
+int ptindex(BIT *inv, int n)
 /*
  * I return the number of 1's in the "n" elements of "inv".
  */

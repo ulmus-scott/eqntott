@@ -72,10 +72,7 @@ void find_index(PTERM *pts[], int npts, int x, int *start, int *finish)
 }
 
 
-int
-trymerge (pts, npts, i, j)
-register PTERM *pts[];
-register int i, j, npts;
+int trymerge(register PTERM *pts[], register int npts, register int i, register int j)
 {
 	int m;
 
@@ -116,10 +113,7 @@ register int i, j, npts;
 	return (npts);
 }
 
-int 
-merge (pts, npts)
-PTERM *pts[];
-int npts;
+int merge(PTERM *pts[], int npts)
 /*
  * My job is to find pairs of adjacent PTERM's with identical
  * outputs, add a PTERM on the end with those same outputs

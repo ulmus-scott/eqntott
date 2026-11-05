@@ -12,9 +12,7 @@
  */
 #include "bnode.h"
 
-BNODE *
-canon (exp)
-BNODE *exp;
+BNODE* canon(BNODE *exp)
 {
 	BNODE *tBnode;
 
@@ -91,9 +89,7 @@ BNODE *exp;
 
 #define ZERO_BNODE new_bnode( 0, NIL_BNODE, NIL_BNODE )
 
-BNODE *
-ecanon (exp)
-BNODE *exp;
+BNODE* ecanon(BNODE* exp)
 {
 	BNODE *tBnode;
 

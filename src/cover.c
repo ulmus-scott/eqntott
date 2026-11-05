@@ -37,10 +37,7 @@ void cover(PTERM *pts[], int npts)
 	return;
 }
 		
-PTERM *
-extant (pts, npts, pt)
-PTERM *pts[], *pt;
-int npts;
+PTERM* extant(PTERM *pts[], int npts, PTERM *pt)
 /*
  * Try to find a product term with an and-plane which implies pt's 
  * and-plane as well as a compatible or-plane.

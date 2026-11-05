@@ -10,10 +10,7 @@
  * hash, hsearch
  */
 
-int
-hash (s, hshsiz)
-register char *s;
-int hshsiz;
+int hash(register char *s, int hshsiz)
 {
 	register long hash = 0;
 	int retval;
