@@ -8,7 +8,9 @@
 #include "version.h"
 
 #include <stdio.h>
+#ifndef PACKAGE_STRING
 #include "config.h"
+#endif
 
 void version(void)
 {
