@@ -84,28 +84,27 @@ int hash(register char *s, int hshsiz)
  *	hash is called for first hash, linear rehash used.
  */
 
-char *
-hsearch (key, base, nel, width, compar, open, slot)
+struct Nt *
+hsearch (key, base, nel, compar, open, slot)
 char *key;
-register char *base;
+register struct Nt *base;
 int nel;
-register unsigned width;
-int (*compar)();
-int (*open)();
-char **slot;
+int (*compar)(char *, struct Nt *);
+int (*open)(struct Nt *);
+struct Nt **slot;
 {
-	register int i = width * hash (key, nel);
+	register int i = hash (key, nel);
 	int nnel;
 
 	for (nnel = nel; nnel > 0; nnel--)
 		if ((*open)(base+i)) {
 			*slot = base+i;
-			return ((char *) 0);
+			return (0);
 		}
 		else	if ((*compar)(key, base+i))
-				i = (i+width) % (width*nel);
+				i = (i+1) % (nel);
 			else	return (base+i);
-	return (*slot = (char *) 0);
+	return (*slot = 0);
 }
 
 /*
@@ -116,8 +115,7 @@ struct Nt* nt_update(char *name)
 {
 	struct Nt *nt, *slot;
 
-	nt = (struct Nt *) hsearch (name, (char *) nts, NTSIZE, 
-		sizeof (struct Nt), nt_compar, nt_open, (char **) &slot);
+	nt = hsearch (name, nts, NTSIZE, nt_compar, nt_open, &slot);
 	if (nt)
 		return (nt);
 
