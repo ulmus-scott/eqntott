@@ -9,13 +9,16 @@
 
 #include <stdio.h>
 #include "cover.h"
+#include "duple.h"
+#include "merge.h"
 #include "pterm.h"
+#include "rmcvd.h"
 
 extern int r_flag, R_flag;
 
 int reduce(PTERM *pts[], int npts)
 {
-	int i, changed = 1, merge (), duple (), rmcvd ();
+	int i, changed = 1;
 
 	npts = duple (pts, npts);
 	npts = rmcvd (pts, npts);

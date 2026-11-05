@@ -56,7 +56,7 @@ int nt_open(struct Nt *nt)
 struct Nt* nt_update(char *name)
 {
 	struct Nt *nt, *slot;
-	char *store(), *hsearch();
+	char *hsearch();
 
 	nt = (struct Nt *) hsearch (name, (char *) nts, NTSIZE, 
 		sizeof (struct Nt), nt_compar, nt_open, (char **) &slot);

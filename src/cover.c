@@ -14,29 +14,6 @@
 
 extern int ninputs, noutputs;
 
-void cover(PTERM *pts[], int npts)
-/*
- * run through all of the product terms and if a product term is
- * properly dominated by another, mark the former as covered.
- */
- {
-	PTERM *extant();
-	int i;
-
-	qsort (pts, npts, sizeof (PTERM *), cmppth);
-	for (i = 0; i < npts; i++) {
-		if (pts[i]->cv)
-			continue;
-		if (extant (pts, npts, pts[i])) {
-			pts[i]->cv = 1;
-#ifdef DEBUG
-			printf ("cover: covering %d\n", i);
-#endif
-		}
-	}
-	return;
-}
-		
 PTERM* extant(PTERM *pts[], int npts, PTERM *pt)
 /*
  * Try to find a product term with an and-plane which implies pt's 
@@ -81,4 +58,26 @@ PTERM* extant(PTERM *pts[], int npts, PTERM *pt)
 	putpt (pt);
 #endif
 	return (NIL_PTERM);
+}
+
+void cover(PTERM *pts[], int npts)
+/*
+ * run through all of the product terms and if a product term is
+ * properly dominated by another, mark the former as covered.
+ */
+ {
+	int i;
+
+	qsort (pts, npts, sizeof (PTERM *), cmppth);
+	for (i = 0; i < npts; i++) {
+		if (pts[i]->cv)
+			continue;
+		if (extant (pts, npts, pts[i])) {
+			pts[i]->cv = 1;
+#ifdef DEBUG
+			printf ("cover: covering %d\n", i);
+#endif
+		}
+	}
+	return;
 }

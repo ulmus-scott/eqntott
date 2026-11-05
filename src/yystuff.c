@@ -19,8 +19,6 @@
 #include "bnode.h"
 #include "y.tab.h"
 
-int atoi();
-
 #define NERRORS 10		/* maximum number of syntax errors allowed */
 #define NINBUF 1024		/* maximum capacity of input buffer */
 #define NUNBUF 16		/* maximum capacity of pushback buffer */
@@ -42,8 +40,7 @@ static int yylineno = 0;	/* current input line number */
 
 extern char *ego;		/* name program was invoked with */
 
-static int
-yygetc()
+static int yygetc(void)
 {
 	if (yynunbuf)
 		return (yyunbuf[yynunbuf--]);
@@ -177,7 +174,6 @@ void yyerror(char *yyerrmsg)
 int yylex (void)
 {
 	int c, i = 0;
-	char *index();
 
 start:
 	c = yygetc();
@@ -200,7 +196,7 @@ start:
 
 	yytext[0] = c;
 	for (i = 1, c = yygetc();
-	    (isalnum (c) || index ("_.*[]<>", (char) c)) && i < MAXSTR;
+	    (isalnum (c) || strchr("_.*[]<>", (char) c)) && i < MAXSTR;
 	    i++, c = yygetc())
 		yytext[i] = c;
 	yytext[i] = '\0';

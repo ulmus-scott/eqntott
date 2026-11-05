@@ -38,7 +38,6 @@ static void get_free(void)
 	register PTERM *pterms;
 	register int i;
 	register BIT *or, *and;
-	char *sbrk();
 
 	freePtr = pterms = (PTERM *) malloc (CHUNK * sizeof (PTERM));
 	and = (BIT *) malloc (ninputs * CHUNK * sizeof (BIT));

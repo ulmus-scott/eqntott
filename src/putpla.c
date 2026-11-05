@@ -11,6 +11,7 @@
 #include "x.h"
 #include "nt.h"
 #include "pterm.h"
+#include "pterm_ops.h"
 
 extern int f_flag;
 
@@ -20,7 +21,6 @@ void putpla(PTERM *pts[], int npts)
  */
 {
 	register int i;
-	int cmppt ();
 
 	qsort (pts, npts, sizeof (PTERM *), cmppt);
 
@@ -60,7 +60,6 @@ void putrpla(PTERM *pts[], int npts)
  */
 {
 	register int i, o, n;
-	int cmppt ();
 
 	printf ("%d inputs, %d outputs, %d product terms.\n",
 		ninputs, noutputs, npts);
@@ -113,7 +112,7 @@ void putSpla(PTERM *pts[], int npts)
  * print summary of pla product terms
  */
 {
-	FILE *fp = stdout, *popen();
+	FILE *fp = stdout;
 	register int i, o, n;
 	int count;
 

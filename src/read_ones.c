@@ -12,6 +12,7 @@
  * "exp".  The or-plane connections for output "o" are initialized to 
  * 1's or x's.
  */
+#include "read_ones.h"
 
 #include <stdio.h>
 #include "x.h"
@@ -25,11 +26,51 @@
 
 extern char *ego;
 
+void contradiction(BNODE *exp, int o)
+/*
+ * a logical contradiction has been found.
+ */
+{
+	fprintf (stderr, "%s: logical contradiction in eqn for %s:\n",
+		ego, outorder[o]->name);
+	prexpr (exp);
+	fprintf (stderr, "\nWill try to continue... \n");
+	return;
+}
+
+PTERM* compress(register PTERM *pt)
+{
+	extern PTERM *pts[];
+	register int i;
+	int npts;
+
+	for (i = 0; pt && i < NPTERMS; pt=pt->next, i++) {
+		pt->andhash = pthash (pt->ptand, ninputs);
+		pt->cv = 0;
+		pts[i] = pt;
+	}
+	npts = i;
+	if (npts > NPTERMS) {
+		fprintf (stderr, "%s: compress: too many pterms\n", ego);
+		return (pts[0]);
+	}
+	npts = duple (pts, npts);
+	npts = rmcvd (pts, npts);
+	for (i = 0; i <= npts-2; i++)
+		pts[i]->next = pts[i+1];
+	if (npts) {
+		pts[npts-1]->next = NIL_PTERM;
+		pt = pts[0];
+	}
+	else	pt = NIL_PTERM;
+	return (pt);
+}
+
 PTERM* read_ones(BNODE *exp, int o)
 {
 	register PTERM *L, *R;
 	register int i;
-	PTERM *left, *right, *pt, *new_pterm(), *free_pterm(), *compress();
+	PTERM *left, *right, *pt;
 	BIT *land, *mand, *rand;
 
 	switch (exp->value) {
@@ -109,44 +150,4 @@ PTERM* read_ones(BNODE *exp, int o)
 		pt->ptor[o] = 1;
 		return (pt);
 	}
-}
-
-void contradiction(BNODE *exp, int o)
-/*
- * a logical contradiction has been found.
- */
-{
-	fprintf (stderr, "%s: logical contradiction in eqn for %s:\n",
-		ego, outorder[o]->name);
-	prexpr (exp);
-	fprintf (stderr, "\nWill try to continue... \n");
-	return;
-}
-
-PTERM* compress(register PTERM *pt)
-{
-	extern PTERM *pts[];
-	register int i;
-	int npts;
-
-	for (i = 0; pt && i < NPTERMS; pt=pt->next, i++) {
-		pt->andhash = pthash (pt->ptand, ninputs);
-		pt->cv = 0;
-		pts[i] = pt;
-	}
-	npts = i;
-	if (npts > NPTERMS) {
-		fprintf (stderr, "%s: compress: too many pterms\n", ego);
-		return (pts[0]);
-	}
-	npts = duple (pts, npts);
-	npts = rmcvd (pts, npts);
-	for (i = 0; i <= npts-2; i++)
-		pts[i]->next = pts[i+1];
-	if (npts) {
-		pts[npts-1]->next = NIL_PTERM;
-		pt = pts[0];
-	}
-	else	pt = NIL_PTERM;
-	return (pt);
 }

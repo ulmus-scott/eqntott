@@ -17,7 +17,6 @@ int rmcvd (PTERM *pts[], int npts)
  */
 {
 	register int i;
-	PTERM *free_pterm();
 
 #ifdef DEBUG
 	fprintf (stderr, "rmcvd: npts = %d ...", npts);

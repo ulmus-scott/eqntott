@@ -154,12 +154,14 @@ eqntott_SOURCES = \
  bnode.c\
  bnode.h\
  canon.c\
+ canon.h\
  cover.c\
  cover.h\
  duple.c\
  duple.h\
  hash.c\
  merge.c\
+ merge.h\
  nt.c\
  nt.h\
  preprocess.c\

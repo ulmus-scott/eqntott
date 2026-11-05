@@ -5,6 +5,7 @@
  *	All rights reserved
  *
  */
+#include "merge.h"
 
 #include <stdio.h>
 #include <stdlib.h>

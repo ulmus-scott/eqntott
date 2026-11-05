@@ -16,7 +16,6 @@ extern int ninputs;
 
 int duple (PTERM *pts[], int npts)
 {
-	int cmppth (), cmpv ();
 	register int i, k;
 
 #ifdef DEBUG

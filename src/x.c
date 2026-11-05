@@ -9,6 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 #include "x.h"
+#include "canon.h"
 #include "nt.h"
 #include "preprocess.h"
 #include "prexpr.h"
@@ -16,6 +17,7 @@
 #include "pterm.h"
 #include "pterm_ops.h"
 #include "putpla.h"
+#include "read_ones.h"
 #include "reduce.h"
 #include "substitute.h"
 #include "version.h"
@@ -25,9 +27,8 @@ extern int ninputs, noutputs, nerrors;
 extern int f_flag, s_flag, need_parse, need_grind;
 extern char *ego, *key;
 
-long pthash();
-BNODE *exprs[NOUTPUTS], *canon(), *ecanon();
-PTERM *pts[NPTERMS], *read_ones();
+BNODE *exprs[NOUTPUTS];
+PTERM *pts[NPTERMS];
 
 static int grind(PTERM *pts[], int npts);
 
