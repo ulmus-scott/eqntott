@@ -5,3 +5,4 @@ src/stamp-h1
 *.o
 eqntott
 .qmake.stash
+build/

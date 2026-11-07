@@ -3,8 +3,14 @@ eqntott: convert boolean logic equation to truth table.
 See the man page for more information. There are some example input
 files in the tests/ directory.
 
-The code has been ported to C23 and qmake has been added as a build system..
+The code has been ported to C23 and CMake and qmake have been added as build systems.
 
+To build with CMake:
+cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+cmake --install build
+
+To build with qmake:
 cd src
 qmake
 make
