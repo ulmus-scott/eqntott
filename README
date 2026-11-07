@@ -1,7 +1,17 @@
 eqntott: convert boolean logic equation to truth table.
 
 See the man page for more information. There are some example input
-files in the examples/ directory. To install, do the usual:
+files in the tests/ directory.
+
+The code has been ported to C23 and qmake has been added as a build system..
+
+cd src
+qmake
+make
+make install
+
+Automake (broken, hash.c was removed):
+To install, do the usual:
 
 ./configure
 make

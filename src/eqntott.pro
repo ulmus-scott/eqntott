@@ -1,12 +1,23 @@
 TEMPLATE = app
 TARGET = eqntott
 
+target.path = /usr/local/bin
+INSTALLS += target
+
 CONFIG -= qt
 
 QMAKE_CFLAGS += -Wundef
 #CONFIG += c11 c17 strict_c
 QMAKE_CFLAGS += -std=c23
 QMAKE_CFLAGS += -g
+
+# Remove other possible optimization flags
+QMAKE_CFLAGS_RELEASE -= -O
+QMAKE_CFLAGS_RELEASE -= -O1
+QMAKE_CFLAGS_RELEASE -= -O2
+
+# Add the desired -O3 if not present
+QMAKE_CFLAGS_RELEASE *= -O3
 
 DEFINES += _POSIX_C_SOURCE=202405L
 DEFINES += _XOPEN_SOURCE=800
@@ -53,3 +64,7 @@ HEADERS += y.tab.h
 HEADERS += yyparse.h
 SOURCES += yystuff.c
 HEADERS += yystuff.h
+
+documentation.path = /usr/local/share/man
+documentation.files += ../doc/eqntott.1
+INSTALLS += documentation
