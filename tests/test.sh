@@ -3,7 +3,7 @@
 
 # Automake and qmake
 #EQNTOTT=../src/eqntott
-# CMake
+# CMake and meson
 EQNTOTT=../build/eqntott
 
 # Simple AND case
